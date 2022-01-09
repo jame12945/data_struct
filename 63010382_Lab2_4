@@ -1,0 +1,80 @@
+"""
+if __name__=='__main__' :
+    print("*** Fun with countdown ***")
+    temp=list(input("Enter List : "))
+    ans=list()
+    st=list()
+    for i in range(int(float(len(temp)-1)/2)):
+        temp.remove(' ')
+    cdup=0
+
+    for i in range(len(temp)):
+        if int(temp[-i-1])==cdup+1:#ที่3 2 1มีเลข 3ตัว ได้ temp[-4],cd=1
+            cdup=cdup+1
+        elif int(temp[-i-1])==1:
+            st.append(cdup)
+            cdup=1
+        elif cdup>0 :
+            st.append(cdup)
+            cdup=0
+    if cdup!=0:
+        st.append(cdup)
+
+    #ans
+    #len
+    print("[",end='')
+    print(len(st),end='')
+    print(", [",end='')
+    #cd = countdown
+    for j in range(len(st)):
+        i=int(st[-j-1])
+        print("[",end='')
+        while i!=0 :
+            print(i,end='')
+            if i!=1 :
+                print(", ",end='')
+            i=i-1
+        print("]",end='')
+        if j!=len(st)-1:
+            print(", ",end='')
+        else :
+            print("]]")
+"""
+""""
+x = list(map(int, input("Enter Your List : ").split()))
+list1 = []
+if len(x)>2:
+    """
+"""
+   b= sum(x)
+   print("List of students: ", b)
+   
+   for i in x :
+       for j in x :
+
+
+
+
+else :
+    print("Array Input Length Must More Than 2")
+"""
+x = [int(a) for a in input("Enter Your List : ").split()]
+if len(x) < 3:
+    print('Array Input Length Must More Than 2')
+else:
+    temp = [0]*3
+    ans = []
+    for i in range(0,len(x)):
+        for j in range(i+1,len(x)):
+            for k in range(j+1,len(x)):
+                if x[i]+x[j]+x[k]==0:
+                    temp[0] = x[i]
+                    temp[1] = x[j]
+                    temp[2] = x[k]
+                    temp.sort()
+                    ans.append(temp.copy())
+    final = []
+    for i in ans:
+        if i not in final:
+            final.append(i)
+    print(final)
